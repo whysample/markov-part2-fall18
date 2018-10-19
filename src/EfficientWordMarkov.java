@@ -12,7 +12,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 	}
 
 	public EfficientWordMarkov() {
-		this(3);
+		this(2);
 	}
 
 	@Override
