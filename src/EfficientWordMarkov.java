@@ -13,6 +13,7 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 	public EfficientWordMarkov() {
 		this(3);
 	}
+	@Override
 	public void setTraining(String text) {
 		myWords = text.split("\\s+");
 		this.myMap = new HashMap<>();
@@ -22,7 +23,7 @@ public class EfficientWordMarkov extends BaseWordMarkov{
 			if (!(this.myMap.containsKey(ch))) {
 				this.myMap.put(ch, name);
 			}
-			if(i+this.myOrder+1<=text.length()) {
+			if(i+this.myOrder+1<=myWords.length) {
 				this.myMap.get(ch).add(myWords[i+1]);
 			}
 			else {
