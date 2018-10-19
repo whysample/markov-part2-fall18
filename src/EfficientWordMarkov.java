@@ -27,9 +27,18 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 			}
 			if (i + this.myOrder + 1 <= myWords.length) {
 				this.myMap.get(ch).add(myWords[i + 1]);
-			} else {
+			} 
+			else {
 				this.myMap.get(ch).add(PSEUDO_EOS);
 			}
 		}
+	}
+	@Override
+	public ArrayList<String> getFollows(WordGram key) {
+		if (!(this.myMap.containsKey(key))) {
+			throw new NoSuchElementException(key + " not in map");
+		}
+		return this.myMap.get(key);
+
 	}
 }
