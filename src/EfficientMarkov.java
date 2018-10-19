@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class EfficientMarkov extends BaseMarkov {
-	Map<String, ArrayList<String>> myMap;
+	private Map<String, ArrayList<String>> myMap;
 
 	public EfficientMarkov(int order) {
 		super(order);
@@ -21,7 +21,6 @@ public class EfficientMarkov extends BaseMarkov {
 			ArrayList<String> name = new ArrayList<String>();
 			if (!(this.myMap.containsKey(c))) {
 				this.myMap.put(c, name);
-				System.out.println(myOrder);
 			}
 			this.myMap.get(c).add((text.substring(i + this.myOrder,1+i + this.myOrder)));
 		}
