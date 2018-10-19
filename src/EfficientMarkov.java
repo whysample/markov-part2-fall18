@@ -15,7 +15,7 @@ public class EfficientMarkov extends BaseMarkov{
 	public void setTraining(String text) {
 		this.myMap=new HashMap<>();
 		for(int i=0;i<(text.length()-this.myOrder);i++) {
-			String c= myText.substring(i, i+this.myOrder);
+			String c= text.substring(i, i+this.myOrder);
 			ArrayList<String> name= new ArrayList<String>();
 			if(!(this.myMap.containsKey(c))){
 				this.myMap.put(c,name);
