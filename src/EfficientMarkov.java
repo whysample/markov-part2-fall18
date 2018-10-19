@@ -24,7 +24,6 @@ public class EfficientMarkov extends BaseMarkov {
 			}
 		    this.myMap.get(c).add((text.substring(i + this.myOrder, 1 + i + this.myOrder)));
 		}
-		this.myMap.get(text.substring(text.length()-this.myOrder,text.length()-1)).add(PSEUDO_EOS);
 	}
 
 	@Override
