@@ -12,7 +12,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 	}
 
 	public EfficientWordMarkov() {
-		this(2);
+		this(3);
 	}
 
 	@Override
@@ -25,8 +25,8 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 			if (!(this.myMap.containsKey(ch))) {
 				this.myMap.put(ch, name);
 			}
-			if (i + this.myOrder + 1 <= myWords.length) {
-				this.myMap.get(ch).add(myWords[i + 1]);
+			if (i + this.myOrder < myWords.length) {
+				this.myMap.get(ch).add(myWords[i + this.myOrder]);
 			} 
 			else {
 				this.myMap.get(ch).add(PSEUDO_EOS);
