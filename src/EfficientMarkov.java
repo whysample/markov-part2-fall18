@@ -22,7 +22,7 @@ public class EfficientMarkov extends BaseMarkov {
 			if (!(this.myMap.containsKey(c))) {
 				this.myMap.put(c, name);
 			}
-			if(i+this.myOrder+1<text.length()) {
+			if(i+this.myOrder+1<=text.length()) {
 				this.myMap.get(c).add((text.substring(i + this.myOrder, 1 + i + this.myOrder)));
 			}
 			else {
